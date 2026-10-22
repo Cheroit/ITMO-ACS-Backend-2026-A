@@ -22,7 +22,11 @@ export const createServiceApp = (serviceName: string) => {
     });
 
     app.get('/health', (_request, response) => {
-        response.send({ status: 'ok', service: serviceName });
+        response.send({
+            status: 'ok',
+            service: serviceName,
+            version: 'hw6-v1',
+        });
     });
 
     return app;
